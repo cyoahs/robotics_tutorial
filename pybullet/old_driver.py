@@ -7,7 +7,7 @@ p.setAdditionalSearchPath(pybullet_data.getDataPath())
 p.setGravity(0,0, -10.0)
 
 planeId = p.loadURDF("plane.urdf")
-carId = p.loadURDF("pybullet\\car_4.urdf", [0, 0, 1.5], [1, 0, 0, 0])
+carId = p.loadURDF("pybullet/car_3.urdf", [0, 0, 1.5], [1, 0, 0, 0])
 
 t = 0
 while t < 1200:

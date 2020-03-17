@@ -9,8 +9,5 @@
                 <color rgba="0 0 .8 1"/>
             </material>
         </visual>
-        <inertial>
-            <mass value="10.0"/>
-        </inertial>
     </link>        
 </robot>
