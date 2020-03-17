@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<robot name="car">
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <box size="4.0 2.0 1.0"/>
+            </geometry>
+            <material name="blue">
+                <color rgba="0 0 .8 1"/>
+            </material>
+        </visual>
+        <inertial>
+            <mass value="10.0"/>
+        </inertial>
+    </link>        
+</robot>
