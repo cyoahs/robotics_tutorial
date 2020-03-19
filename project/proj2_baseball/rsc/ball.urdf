@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<robot name="robot_name">
+    <link name="ball">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="0.15"/>
+            <inertia ixx="0.1" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <sphere radius="0.04"/>
+            </geometry>
+            <material name="grey_ball">
+                <color rgba="0.8 0.8 0.8 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <sphere radius="0.04"/>
+            </geometry>
+        </collision>
+        <contact>
+            <lateral_friction value="10000.0"/>
+            <rolling_friction value="0.0"/>
+        </contact>
+    </link>   
+</robot>
