@@ -1,11 +1,16 @@
 import pybullet as p
 import time
 import numpy as np
+import os
 
 from Env import Env
 import RobotControl
 
 p.connect(p.GUI)
+
+# video flag
+recordVideo = True
+prefix = time.strftime('%Y%m%d%H%M%S',time.localtime(time.time()))
 
 # load the plane and the table
 # the height of table is 1.1
@@ -21,6 +26,10 @@ for jointId in range(p.getNumJoints(robotId)):
 
 # add your debug items
 RobotControl.addDebugItems(robotId)
+
+if recordVideo:
+    videoFile = os.path.join('project', 'proj2_baseball', 'log', prefix+'.mp4')
+    videoLogId = p.startStateLogging(p.STATE_LOGGING_VIDEO_MP4, videoFile)
 
 # Loop over 4 tests
 for i in [1, 2, 4, 8]:
@@ -61,10 +70,14 @@ for i in [1, 2, 4, 8]:
         # work in this section
         if t < trajLength:
             p.setJointMotorControlArray(robotId, list(range(p.getNumJoints(robotId))), p.POSITION_CONTROL, targetPositions=traj[t])
-            baseVel = p.getBaseVelocity(env.ballId)[0]
-            print(np.linalg.norm([baseVel[:2]]))
         t += 1
         
         # end control
 
+if recordVideo:
+    p.stopStateLogging(videoLogId)
+score = env.calcScore()
 print(env.distance)
+print(score)
+scoreFile = os.path.join('project', 'proj2_baseball', 'log', prefix+'.txt')
+env.writeLog(scoreFile)

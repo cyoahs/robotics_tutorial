@@ -69,3 +69,21 @@ class Env(object):
 
     def recordDistance(self):
         self.distance.append(np.linalg.norm([self.contactBetweenBallAndGround[0][5][0] - self.randTarget[0], self.contactBetweenBallAndGround[0][5][1] - self.randTarget[1]]))
+    
+    def calcScore(self):
+        if self.distance:
+            for distance in self.distance:
+                if distance < 0.1:
+                    self.score += 100/4
+                else:
+                    self.score += 100*0.1**0.25/distance**0.25/4
+        return self.score
+    
+    def writeLog(self, scoreFile):
+        with open(scoreFile, 'w') as f:
+            f.writelines('File name:\n')
+            f.writelines(scoreFile+'\n')
+            f.writelines('Distance:\n')
+            f.writelines(f'{self.distance}\n')
+            f.writelines('Score:\n')
+            f.writelines(f'{self.score}\n')
