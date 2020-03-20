@@ -5,7 +5,7 @@ import numpy as np
 
 def load():
     # work in the following section to load your robot
-    robotName = 'catcher.urdf'
+    robotName = 'HextechCatcher.urdf'
     robotPath = os.path.join('project', 'proj2_baseball', 'rsc', robotName)
     robotInitPos = [-0.6, 0.6, 1.1+0.5]
     robotInitOrn = [1.0, 0.0, 0.0, 0.0]
