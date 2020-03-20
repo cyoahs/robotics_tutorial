@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<robot name="forest">
+    <link name="base">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="0.0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+    </link>
+
+    <link name="obstacle_1">
+        <inertial>
+            <mass value="10.0"/>
+            <inertia ixx="10.0" ixy="0.0" ixz="0.0" iyy="10.0" iyz="0.0" izz="10.0"/>
+        </inertial>
+        <visual>
+            <geometry>
+                <box size="1.0 1.0 8.0"/>
+            </geometry>
+            <material name="grey_forest">
+                <color rgba="0.5 0.5 0.5 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="1.0 1.0 8.0"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="obstacle_1_to_base" type="fixed">
+        <origin xyz="-10.0 0.0 5.0" rpy="0.0 0.0 0.0"/>
+        <parent link="base"/>
+        <child link="obstacle_1"/>
+    </joint>
+</robot>
