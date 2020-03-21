@@ -29,13 +29,13 @@ The final grade of one experiment depend both on the absolute score and the rela
 
 #### Table and baseball
 
-The detailed size of the table is shown in the fig below. The baseball is a sphere with a radius of 4 cm. The baseball is randomly placed in a limited square on the table. 
+The detailed size of the table is shown in the fig below (unit: m). The baseball is a sphere with a radius of 4 cm and a weight of 150g. The baseball is randomly placed in a limited square on the table. Once you throw a baseball to the ground, the robot arm will be reset to initial position and a new baseball will be put on the table randomly.
 
 ![env](assets/table_size.png)
 
 #### Robot
 
-The base of robot should be fixed on the table at any position you like. The total length of your robot cannot be longer than 5 m. **Since the existence of prismatic joints will simplify this problem much, only one prismatic joint.** The base of the robot should be fixed on the table. A link with mass = 0 in urdf file means a fixed link in pybullet, but those link can not hold collision property. You have to create another link with mass and collision and attach it to the base with a fixed joint.
+The base of robot should be fixed on the table at any position you like. The total length of your robot cannot be longer than 5 m. **Since the existence of prismatic joints will simplify this problem much, only continuous or revolute joints are allowed.** The base of the robot should be fixed on the table. A link with mass = 0 in urdf file means a fixed link in pybullet, but those link can not hold collision property. You have to create another link with mass and collision and attach it to the base with a fixed joint.
 
 #### Targets
 
@@ -63,7 +63,7 @@ The distance from the target position to the position on the ground where the ba
 
 ## 简介
 
-在本次实验中，你需要控制第一次实验中设计的机械臂。机械臂的底部固定在桌上，控制机械臂抓取桌面的棒球，并且扔向制定位置。你需要规划机械臂的运动路径，并且利用逆运动学求解运动轨迹上的关节位置，从而对机械臂进行运动控制。
+在本次实验中，你需要控制第一次实验中设计的机械臂。机械臂的底部固定在桌上，控制机械臂抓取桌面的棒球，并且扔向指定位置。你需要规划机械臂的运动路径，并且利用逆运动学求解运动轨迹上的关节位置，从而对机械臂进行运动控制。
 
 ## 一般信息
 
@@ -89,13 +89,13 @@ The distance from the target position to the position on the ground where the ba
 
 #### 桌子与棒球
 
-桌子的尺寸如下图所示，棒球半径4cm，棒球会随机在桌面上生成。
+桌子的尺寸如下图所示（单位：米），棒球半径4cm，质量150g，棒球会随机在桌面上生成。每当扔出的球落地，机械臂的位置就会被重置，并且在桌面上随机刷新一个新的球。
 
 ![env](assets/table_size.png)
 
 #### 机器人
 
-机器人的底座可以被固定在桌面上的任何位置。机械臂的总长不能超过5m。 **由于滑动关节(prismatic joint)会极大简化问题，因此机械臂最多采用一个滑动关节。** URDF文件中0质量的连杆会被pybullet定义为固定连杆。由于0质量连杆不能定义碰撞，因此需要另外创建一个带碰撞的连杆，固定连接到0质量连杆上。
+机器人的底座可以被固定在桌面上的任何位置。机械臂的总长不能超过5m。 **由于滑动关节(prismatic joint)会极大简化问题，机械臂只能使用旋转关节。** URDF文件中0质量的连杆会被pybullet定义为固定连杆。由于0质量连杆不能定义碰撞，因此需要另外创建一个带碰撞的连杆，固定连接到0质量连杆上。
 
 #### 目标位置
 
