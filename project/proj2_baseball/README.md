@@ -45,7 +45,7 @@ The base of robot should be fixed on the table at any position you like. The tot
 
 The `rsc` folder contains URDF files. The `src` folder contains python script and you should modify the files in this folder, but you can also write other files and import them in the `main.py`. The `log` folder is used to contain score or other data from each experiment.
 
-`Env.py` and `main.py` is used for basic setting for the task, do not modify them. `RobotControl.py` contains three functions that you can modify, but do not change the input and output for those function. The simulation is done with a timestep of 1/240 second.
+`Env.py` , `Helper.py` and `main.py` is used for basic setting for the task, do not modify them. `RobotControl.py` contains three functions that you can modify, but do not change the input and output for those function. The simulation is done with a timestep of 1/240 second.
 
 `load` function is used for loading the robot and return your robotId in pybullet. 
 
@@ -53,7 +53,7 @@ The `rsc` folder contains URDF files. The `src` folder contains python script an
 
 `addDebugItems` function is used to add visual debug items during simulation.
 
-You can run the `main.py` to examine your algorithm. To ensure the relative path work properly, please clone or download the whole `robotics_tutorials` folder and run the code in the `robotics_tutorials` folder. You can use `open folder` to open this folder in VS Code and run the file.
+You can run the `main.py` to examine your algorithm. When every thing is done, please pack `proj2_baseball` folder and submit the code along with the report.
 
 ### Score
 
@@ -105,7 +105,7 @@ The distance from the target position to the position on the ground where the ba
 
 `rsc` 文件夹存储URDF文件。 `src` 保存python源代码，你需要在这个文件夹下编写程序, 并通过 `main.py`调用。 `log` 文件夹存储每次试验的数据。
 
-`Env.py` 与 `main.py` 用做实验的基础设置与记分, 请不要修改。 `RobotControl.py` 包含三个主要的函数，你需要通过修改这三个函数完成实验任务, 但是请不要修改函数的输入与输出，也可以创建新的子函数，在这三个函数中调用。 实验所用的时间步长为1/240秒。
+`Env.py` , `Helper.py` 与 `main.py` 用做实验的基础设置与记分, 请不要修改。 `RobotControl.py` 包含三个主要的函数，你需要通过修改这三个函数完成实验任务, 但是请不要修改函数的输入与输出，也可以创建新的子函数，在这三个函数中调用。 实验所用的时间步长为1/240秒。
 
 `load` 函数用于加载机械臂，返还机械臂在pybullet中的id。
 
@@ -113,7 +113,7 @@ The distance from the target position to the position on the ground where the ba
 
 `addDebugItems` 函数用于添加可视化的调试信息。
 
-通过运行 `main.py` 测试算法并且进行评分。为了确保程序中的相对路径正确，请下载整个 `robotics_tutorials` 文件夹并在该文件夹中运行程序。可以使用VS Code中的“打开文件夹”功能打开本文件夹，再从目录树中选择文件并运行。
+通过运行 `main.py` 测试算法并且进行评分。提交报告时，请将`proj2_baseball`文件夹打包同时提交。
 
 ### 评分
 
