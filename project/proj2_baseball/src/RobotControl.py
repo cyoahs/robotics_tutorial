@@ -1,12 +1,14 @@
 import pybullet as p
 import os
 import numpy as np
+import Helper
 
 
 def load():
     # work in the following section to load your robot
     robotName = 'HextechCatcher.urdf'
-    robotPath = os.path.join('project', 'proj2_baseball', 'rsc', robotName)
+    # robotPath = os.path.join('project', 'proj2_baseball', 'rsc', robotName)
+    robotPath = Helper.findURDF(robotName)
     robotInitPos = [-0.6, 0.6, 1.1+0.5]
     robotInitOrn = [1.0, 0.0, 0.0, 0.0]
     robotId = p.loadURDF(robotPath, robotInitPos, robotInitOrn)

@@ -3,6 +3,7 @@ import pybullet_data
 import os
 import random
 import numpy as np
+import Helper
 
 
 class Env(object):
@@ -12,13 +13,16 @@ class Env(object):
 
         self.planeId = p.loadURDF("plane.urdf")
         tableName = 'table.urdf'
-        tablePath = os.path.join('project', 'proj2_baseball', 'rsc', tableName)
+        # tablePath = os.path.join('project', 'proj2_baseball', 'rsc', tableName)
+        tablePath = Helper.findURDF(tableName)
         self.tableId = p.loadURDF(tablePath, [0, 0, 1.05], [1.0, 0.0, 0.0, 0.0])
 
         ballName = 'ball.urdf'
-        self.ballPath = os.path.join('project', 'proj2_baseball', 'rsc', ballName)
+        # self.ballPath = os.path.join('project', 'proj2_baseball', 'rsc', ballName)
+        self.ballPath = Helper.findURDF(ballName)
         targetName = 'target.urdf'
-        self.targetPath = os.path.join('project', 'proj2_baseball', 'rsc', targetName)
+        # self.targetPath = os.path.join('project', 'proj2_baseball', 'rsc', targetName)
+        self.targetPath = Helper.findURDF(targetName)
 
         self.distance = []
         self.score = 0

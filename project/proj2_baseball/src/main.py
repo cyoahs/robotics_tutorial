@@ -5,6 +5,7 @@ import os
 
 from Env import Env
 import RobotControl
+import Helper
 
 p.connect(p.GUI)
 
@@ -28,7 +29,8 @@ for jointId in range(p.getNumJoints(robotId)):
 RobotControl.addDebugItems(robotId)
 
 if recordVideo:
-    videoFile = os.path.join('project', 'proj2_baseball', 'log', prefix+'.mp4')
+    # videoFile = os.path.join('project', 'proj2_baseball', 'log', prefix+'.mp4')
+    videoFile = Helper.findLog(prefix+'.mp4')
     videoLogId = p.startStateLogging(p.STATE_LOGGING_VIDEO_MP4, videoFile)
 
 # Loop over 4 tests
@@ -79,5 +81,6 @@ if recordVideo:
 score = env.calcScore()
 print(env.distance)
 print(score)
-scoreFile = os.path.join('project', 'proj2_baseball', 'log', prefix+'.txt')
+# scoreFile = os.path.join('project', 'proj2_baseball', 'log', prefix+'.txt')
+scoreFile = Helper.findLog(prefix+'.txt')
 env.writeLog(scoreFile)
