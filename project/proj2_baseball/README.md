@@ -57,7 +57,7 @@ You can run the `main.py` to examine your algorithm. To ensure the relative path
 
 ### Score
 
-The distance from the target position to the position on the ground where the ball first drop is used for scoring, marked as `d`. When $d<0.1m$ , the score is 100. When $d>0.1m$, the score is $\frac{100\times0.1^0.25}{d^0.25}$ . The final socre is the average for four throw.
+The distance from the target position to the position on the ground where the ball first drop is used for scoring, marked as `d`. When $d<0.1m$ , the score is 100. When $d>0.1m$, the score is $\frac{100\times0.1^{0.25}}{d^{0.25}}$ . The final socre is the average for four throw.
 
 # 实验 #2 - 打棒球
 
@@ -117,4 +117,4 @@ The distance from the target position to the position on the ground where the ba
 
 ### 评分
 
-本实验根据棒球落点到目标位置的水平距离打分，记距离为 `d`. 当 $d<0.1m$ 时，当次投掷的得分为100； 当 $d>0.1m$ 时, 当次投掷的得分为 $\frac{100\times0.1^0.25}{d^0.25}$ 。最终的总分是四次投掷的平均分。
+本实验根据棒球落点到目标位置的水平距离打分，记距离为 `d`. 当 $d<0.1m$ 时，当次投掷的得分为100； 当 $d>0.1m$ 时, 当次投掷的得分为 $\frac{100\times0.1^{0.25}}{d^{0.25}}$ 。最终的总分是四次投掷的平均分。
