@@ -1,17 +1,18 @@
 import pybullet as p
 import os
+import Helper
 
 
 class Env(object):
     def __init__(self, initPos, robotName='HextechUAV.urdf'):
         # load map and robot
         mapName = 'forest.urdf'
-        mapPath = os.path.join('project', 'proj3_fly', 'rsc', mapName)
+        mapPath = Helper.findURDF(mapName)
         self.mapId = p.loadURDF(mapPath)
 
-        mapPath = os.path.join('project', 'proj3_fly', 'rsc', robotName)
+        robotPath = Helper.findURDF(robotName)
         self.initPos = initPos
-        self.robotId = p.loadURDF(mapPath, initPos)
+        self.robotId = p.loadURDF(robotPath, initPos)
 
         # p.changeDynamics(self.robotId, 0, linearDamping=0.0, jointDamping=0.0)
         # p.changeDynamics(self.robotId, 1, linearDamping=0.0, jointDamping=0.0)
