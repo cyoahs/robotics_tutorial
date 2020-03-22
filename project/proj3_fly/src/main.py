@@ -12,7 +12,7 @@ prefix = time.strftime('%Y%m%d%H%M%S',time.localtime(time.time()))
 p.connect(p.GUI)
 p.setGravity(0.0, 0.0, -10.0)
 
-startPos = [-12.0, 0.0, 0.0]
+startPos = [-16.0, 0.0, 0.0]
 
 env = Env(startPos)
 plan = RobotControl.generateTraj(env.robotId)
