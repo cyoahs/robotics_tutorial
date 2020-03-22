@@ -32,11 +32,17 @@ This experiment is taken in a 2 dimensional plane. Thus the robot only have thre
 
 The map of the forest is given in a urdf file. The UAV starts from one side of the map and needs to reach the other side. A detailed illustration is given in the below figures. There are many possible ways to the destination, you should choose one that best suit for your control algorithm.
 
+![map1](assets/map1.png)
+
+![map2](assets/map2.png)
+
 #### Robot
 
 The robot is given in a urdf file. Special treatments are taken to constraints the UAV into a 2 dimensional world. The base for the robot is a fixed base with zero mass. The real base of the robot is constraints to the fixed "world base" via two virtual links with three joints, that is, two prismatic joint for translation and one continuous joint for rotation. The mass and inertia of those virtual links can be ignored.
 
 The exact size for the UAV with full collision is given in the figure below. The UAV has two sphere engines, one for each side. The engines can provide limited and noised force along the axes of symmetry.
+
+![size](assets/UAVSize.png)
 
 The base of the UAV has a weight of 8 kg and a moment of inertia of 0.3 kg m^2 around the center of mass. Each engine has a weight of 1 kg and a moment of inertia of 0.1 kg m^2 around its own center of mass. Details can be found in the urdf file.
 
@@ -90,11 +96,17 @@ The score depends on the total simulation time (number of time steps multiply ti
 
 本实验地图在urdf文件中给定。无人机需要从地图一侧飞到地图另一侧，地图细节可查看下图。
 
+![map1](assets/map1.png)
+
+![map2](assets/map2.png)
+
 #### 机器人
 
 机器人的urdf文件给定。为了在三维物理引擎中模拟平面动力学问题，在机器人的urdf文件中做了特殊的处理。urdf文件中的第一个杆是一个无体积的固定杆，无人机的机身通过三个铰与固定杆相连，分别是两个平动铰和一个转动铰。无人机机身到固定连杆之间的虚拟连杆质量和转动惯量均忽略笔记。
 
 无人机的尺寸如下如所示，无人机两侧各有一个圆柱形的引擎，引擎能在对称轴方向提供有限且有扰动的推力。
+
+![size](assets/UAVSize.png)
 
 无人机的机身为8kg，绕质心转动惯量0.3 kg m^2。每个引擎质量为1kg，面内绕质心转动惯量为0.1 kg m^2。细节详见urdf文件。
 
