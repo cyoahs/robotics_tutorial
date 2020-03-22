@@ -25,7 +25,7 @@ class Env(object):
     def cameraControl(self):
         # control camera
         robotPos = p.getLinkState(self.robotId, 2)[0]
-        p.resetDebugVisualizerCamera(10.0, 0.0, 0.0, robotPos)
+        p.resetDebugVisualizerCamera(15.0, 0.0, 0.0, robotPos)
     
     def control(self, force):
         # apply force control

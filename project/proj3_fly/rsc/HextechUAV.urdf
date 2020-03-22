@@ -18,7 +18,7 @@
         <parent link="HextechWorld"/>
         <child link="HextechZaxis"/>
         <axis xyz="0.0 0.0 1.0"/>
-        <limit lower="-10.0" upper="10.0" effort="0.0" velocity="100.0"/>
+        <limit lower="-8.0" upper="8.0" effort="0.0" velocity="100.0"/>
     </joint>
 
     <link name="HextechXaxis">
@@ -32,7 +32,7 @@
         <parent link="HextechZaxis"/>
         <child link="HextechXaxis"/>
         <axis xyz="1.0 0.0 0.0"/>
-        <limit lower="-100.0" upper="100.0" effort="0.0" velocity="100.0"/>
+        <limit lower="-18" upper="16" effort="0.0" velocity="100.0"/>
     </joint>
 
     <link name="UAVbase">
