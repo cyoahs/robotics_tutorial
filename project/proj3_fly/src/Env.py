@@ -6,7 +6,7 @@ import math
 
 
 class Env(object):
-    def __init__(self, initPos, robotName='HextechUAV.urdf'):
+    def __init__(self, initPos, targetPos, robotName='HextechUAV.urdf'):
         # load map and robot
         mapName = 'forest.urdf'
         mapPath = Helper.findURDF(mapName)
@@ -15,6 +15,10 @@ class Env(object):
         robotPath = Helper.findURDF(robotName)
         self.initPos = initPos
         self.robotId = p.loadURDF(robotPath, initPos)
+
+        targetName = 'target.urdf'
+        targetPath = Helper.findURDF(targetName)
+        self.targetId = p.loadURDF(targetPath, targetPos)
         
         jointFrictionForce = 0.01
         for joint in range(p.getNumJoints(self.robotId)):
