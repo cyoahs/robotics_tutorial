@@ -3,3 +3,4 @@
 __pycache__
 **/log/*
 AnswerByTA.py
+.DS_Store
