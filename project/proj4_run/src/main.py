@@ -39,7 +39,7 @@ if recordVideo:
 t = 0
 while True:
     p.stepSimulation()
-    time.sleep(1/24)
+    time.sleep(1/240)
 
     controlSignal = RobotControl.realTimeControl(env.robotId, plan)
     env.control(controlSignal)

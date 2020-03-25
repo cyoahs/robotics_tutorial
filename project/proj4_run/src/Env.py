@@ -20,18 +20,18 @@ class Env(object):
 
         self.motors = []
         
-        jointFrictionForce = 0.01
+        jointFrictionForce = 0.001
         for joint in range(p.getNumJoints(self.robotId)):
             p.setJointMotorControl2(self.robotId, joint, p.POSITION_CONTROL, force=jointFrictionForce)
         
-        self.noise = 0.0
+        self.noise = 0.03
 
         self.controlMode = p.TORQUE_CONTROL
     
     def cameraControl(self):
         # control camera
         robotPos = p.getLinkState(self.robotId, 2)[0]
-        p.resetDebugVisualizerCamera(5.0, 0.0, 0.0, robotPos)
+        p.resetDebugVisualizerCamera(10.0, 0.0, 0.0, robotPos)
     
     def setMotorName(self, name):
         if len(name) > 2:

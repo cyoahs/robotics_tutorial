@@ -125,9 +125,9 @@
 
     <link name="wheel">
         <inertial>
-            <origin xyz="0.0 0.0 0.0" rpy="1.57 0.0 0.0"/>
-            <mass value="0.5"/>
-            <inertia ixx="0.05" ixy="0.0" ixz="0.0" iyy="0.05" iyz="0.0" izz="0.05"/>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="1.0"/>
+            <inertia ixx="0.5" ixy="0.0" ixz="0.0" iyy="0.5" iyz="0.0" izz="0.5"/>
         </inertial>
         <visual>
             <origin xyz="0.0 0.0 0.0" rpy="1.57 0.0 0.0"/>
