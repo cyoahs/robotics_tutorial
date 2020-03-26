@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<robot name="bonus">
+    <link name="base">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="0.0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.6 6.2 0.6"/>
+            </geometry>
+            <material name="">
+                <color rgba="1.0 0.0 0.0 0.8"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.6 6.2 0.6"/>
+            </geometry>
+        </collision>
+    </link>
+</robot>

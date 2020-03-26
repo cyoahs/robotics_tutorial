@@ -28,6 +28,26 @@ class Env(object):
 
         self.controlMode = p.TORQUE_CONTROL
     
+    def addBonusBlock(self):
+        bonusBlockName = 'bonusBlock.urdf'
+        self.bonusBlockId = []
+        blockPos = [[6.5, 0, 4.75],
+                    [12.25, 0, 1.75],
+                    [19.25, 0, 1.75],
+                    [24.75, 0, 2.25]]
+        self.bonus = [0 for i in range(len(blockPos))]
+
+        for block in blockPos:
+            self.bonusBlockId.append(p.loadURDF(Helper.findURDF(bonusBlockName), basePosition=block))
+    
+    def checkBonus(self):
+        for bonusId, bonusBlockId in enumerate(self.bonusBlockId):
+            if self.bonus[bonusId] > 0:
+                continue
+            getBonus = p.getContactPoints(bodyA=self.robotId, bodyB=bonusBlockId)
+            if getBonus:
+                self.bonus[bonusId] = 1
+    
     def cameraControl(self):
         # control camera
         robotPos = p.getLinkState(self.robotId, 2)[0]

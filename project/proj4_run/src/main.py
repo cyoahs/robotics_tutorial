@@ -24,6 +24,7 @@ targetPos = [41, 0.0, 1.25]
 
 env = Env(robotId, targetPos)
 env.setMotorName(motorName)
+env.addBonusBlock()
 
 plan = RobotControl.generateTraj(env.robotId)
 
@@ -46,6 +47,7 @@ while True:
 
     env.cameraControl()
     RobotControl.addDebugItems(env.robotId)
+    env.checkBonus()
 
     t += 1/240
 
@@ -57,6 +59,11 @@ if recordVideo:
     p.stopStateLogging(videoLogId)
 
 with open(Helper.findLog(prefix+'.txt'), 'w') as f:
-    f.writelines(f'Total time: {t}')
-print('Congratulatons!')
-print(f'Total time: {t}')
+    print('Congratulatons!')
+    f.writelines(f'Origin time: {t}\n')
+    print(f'Origin time: {t}')
+    for idx, val in enumerate(env.bonus):
+        f.writelines(f'Bonus {idx+1}: {val} \n')
+        print(f'Bonus {idx+1}: {val}')
+    f.writelines(f'Final time: {t - sum(env.bonus)*5}\n')
+    print(f'Final time: {t - sum(env.bonus)*5}')
