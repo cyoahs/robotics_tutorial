@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot name="map">
-    <link name="base">
+    <link concave="yes" name="base">
         <inertial>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
             <mass value="0.0"/>
@@ -9,7 +9,7 @@
         <visual>
             <origin xyz="41.5 3.0 -1.0" rpy="1.57 0.0 -1.57"/>
             <geometry>
-                <mesh filename="mesh/map.STL" scale="1.0"/>
+                <mesh filename="mesh/map_concave.obj" scale="1"/>
             </geometry>
             <material name="green">
                 <color rgba="0.2 0.8 0.2 1.0"/>
@@ -18,7 +18,7 @@
         <collision>
             <origin xyz="41.5 3.0 -1.0" rpy="1.57 0.0 -1.57"/>
             <geometry>
-                <mesh filename="mesh/map.STL" scale="1.0"/>
+                <mesh filename="mesh/map_concave.obj" scale="1"/>
             </geometry>
         </collision>
     </link>

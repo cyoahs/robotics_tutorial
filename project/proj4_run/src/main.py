@@ -13,14 +13,14 @@ p.connect(p.GUI)
 p.setGravity(0.0, 0.0, -10.0)
 
 # load your robot here
-initPos = [0.0, 0.0, 1.5]
+initPos = [0.0, 0.0, 2.0]
 robotId = RobotControl.loadRobot(initPos)
 
 # specify the names for your motor joints in urdf file
 motorName = ['engine1', 'engine2']
 
 # load whole environment
-targetPos = [20.0, 0.0, 0.5]
+targetPos = [41, 0.0, 1.25]
 
 env = Env(robotId, targetPos)
 env.setMotorName(motorName)
