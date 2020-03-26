@@ -25,6 +25,10 @@ If large difference appears between the score from the server and your local res
 
 The final grade of one experiment depend both on the absolute score and the relative rank.
 
+### Bug report
+
+The code and the resources are not fully tested for various conditions. Please contact the TA whenever you find anything wrong.
+
 ## Details
 
 ### Environment
@@ -110,6 +114,10 @@ The score depends on the total simulation time (number of time steps multiply ti
 ### 成绩
 
 最终成绩是程序评分和排名的综合结果。
+
+### 错误报告
+
+本实验的程序与素材并未对种种可能的情况做充分的测试，如果发现任何问题请联系助教。
 
 ## 实验细节
 
